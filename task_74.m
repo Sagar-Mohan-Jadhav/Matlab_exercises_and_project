@@ -5,7 +5,7 @@
 fprintf('Enter the number of students: \n')
 student = input('');
 subject_count = 1;
-student_marks = [];
+student_marks = string();
 all_student_marks = [];
 
 for i = 1:student
@@ -14,7 +14,7 @@ for i = 1:student
     while loop_on == logical(1)
         fprintf('Enter the marks of subject %d\n', subject_count);
         subject = input('');
-        student_marks = [student_marks subject];
+        student_marks = string(subject) + ' ' + student_marks;
         proceed = input('Do you wish to continue: yes or no: ', 's');
         if proceed == string('no')
             loop_on = logical(0);
@@ -25,7 +25,9 @@ for i = 1:student
     end
     subject_count = 1;
     all_student_marks = [all_student_marks; student_marks];
-    student_marks = [];
+    student_marks = string();
 end
-
-disp(all_student_marks);
+for i = 1:student
+    fprintf('\nThe mean marks of student %d are:\n',i);
+    disp(mean(str2num(cell2mat(split(all_student_marks(i))))));
+end
