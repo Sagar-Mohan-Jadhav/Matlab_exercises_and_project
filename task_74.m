@@ -1,6 +1,7 @@
 % student grades are to be noted, all students may have different number of
 % subjects so write a matlab loop which will take in the grades of diffrent
-% students and give the option to user to stop entering when he wishes.
+% students and give the option to user to stop entering when he wishes. and
+% give out the mean marks of each student.
 
 fprintf('Enter the number of students: \n')
 student = input('');
