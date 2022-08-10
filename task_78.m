@@ -29,7 +29,7 @@ matrix in which the integers from 1 to n2 wind back and forth along the rows as 
 examples below.
 N = 4
 [1 2 3 4
-8 7 6 5
+4 3 2 1
 9 10 11 12
 16 15 14 13]
 __________________________________________________________________________
@@ -49,12 +49,94 @@ A = [0 1 0 1 0
 %}
 
 %Q.1
-c = 1;
+patern = '';
+stars = [];
 for i = 1:5
-    patern(i) = patern(i-1) + string('*');
-    disp(patern);
+    patern = patern + string('*');
+    stars = [stars; patern];
 end
 for i = 1:4
-    patern = patern - string('*');
-    disp(patern);
+    stars(5+i) = stars(5-i);
 end
+for i = 1:9
+    fprintf('%s\n', stars(i));
+end
+
+%Q2
+n = input('Enter a odd number: ');
+pat_mat = ones(n, n);
+max_ele = (n + 1)/2;
+for i = 1:n
+    for j = 1:n
+        if i <= max_ele && j <= max_ele
+            min_ele = min([i, j]);
+            pat_mat(i, j) = max_ele - min_ele + 1;
+        elseif i <= max_ele && j > max_ele
+            min_ele = min([i, n - j + 1]);
+            pat_mat(i, j) = max_ele - min_ele + 1; 
+        elseif i > max_ele && j <= max_ele
+            min_ele = min([n - i + 1, j]);
+            pat_mat(i, j) = max_ele - min_ele + 1;
+        else
+            min_ele = min([n - i + 1, n - j + 1]);
+            pat_mat(i, j) =  max_ele - min_ele + 1;
+        end
+    end
+end
+disp(pat_mat)
+% Q3
+n = input('Enter an even number: ');
+for i = 2:n
+    if isprime(n - i)
+        p_num = n - i;
+        break
+    end
+end
+fprintf('Two such pairs for number %d are %d and %d.\n', n, p_num, n - p_num)
+%Q4
+n = input('Enter a positive number: ');
+p_mat = ones(n);
+c = 1;
+for i = 1:n
+    for j = 1:n
+        p_mat(i, j) = i*i + j*c - 1*c;
+    end
+    c = -1*c;
+end
+disp(p_mat)
+
+%Q5
+n_array = [];
+while true
+    n = input('Enter a number: ');
+    n_array = [n_array n];
+    Loop_continue = input('Want to enter another number? y or n: ', 's');
+    if Loop_continue == 'n'
+        break
+    end
+end
+for i = 2:length(n_array)
+    if n_array(i) <= n_array(i - 1)
+        disp('not monotonically increasing');
+        break
+    end
+    if i == length(n_array)
+        disp('monotonically increasing')
+    end
+end
+
+%Q6
+nmb = input('Enter a positive number: ');
+mat_nmb = ones(nmb);
+sign_nmb = 0;
+for i = 1:nmb
+    for j = 1:nmb
+        mat_nmb(i , j) = sign_nmb;
+        if mat_nmb(i, j) == 0
+            sign_nmb = 1;
+        else
+            sign_nmb = 0;
+        end
+    end
+end
+disp(mat_nmb)
