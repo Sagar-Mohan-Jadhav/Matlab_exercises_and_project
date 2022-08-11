@@ -103,3 +103,50 @@ for i = 1:((a - x) + (b - y))
 end
 fprintf('The number of ways one can reach from current position to next position are %d\n', n/m);
 clear
+
+%Q3
+
+m = input('Enter the number of rows in the matrix: ');
+n = input('Enter the number of columns in the matrix: ');
+game_mat = ones(m, n);
+for i = 1:m
+    fprintf('Enter the %d row elements\n', i);
+    for j = 1:n
+        game_mat(i, j) = input('');
+    end
+end
+disp(game_mat);
+[~, b] = ismember(1, game_mat);
+a = floor(b/m) + 1;
+b = rem(b, m);
+if ismember(2, game_mat)
+    min_dist = m + n;
+    k = find(game_mat == 2);
+    for i = 1:length(k')
+        p = floor(k(i)/m) + 1;
+        q = rem(k(i), m);
+        if abs(b - q) >= m/2 && b < q
+            min_y = (b) + (m - q);
+        elseif abs(b - q) >= m/2 && q > b
+            min_y = (q) + (m - b);
+        else
+            min_y = abs(b - q);
+        end
+        if abs(a - p) >= n/2 && a < p
+            min_x = (a) + (n - p);
+        elseif abs(a - p) >= n/2 && a > p
+            min_x = (p) + (m - a);
+        else
+            min_x = abs(a - p);
+        end
+        if min_x + min_y < min_dist
+            min_dist = min_x + min_y;
+        end
+    end
+else
+    min_dist = 0;
+end
+fprintf('The minimum distance to nearest enemy is %d\n', min_dist + 1);
+clear
+
+
