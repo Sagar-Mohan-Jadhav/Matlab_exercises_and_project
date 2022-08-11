@@ -105,7 +105,6 @@ fprintf('The number of ways one can reach from current position to next position
 clear
 
 %Q3
-
 m = input('Enter the number of rows in the matrix: ');
 n = input('Enter the number of columns in the matrix: ');
 game_mat = ones(m, n);
