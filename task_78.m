@@ -49,16 +49,16 @@ A = [0 1 0 1 0
 %}
 
 %Q.1
-patern = '';
-stars = [];
-for i = 1:5
-    patern = patern + string('*');
+patern = '*';
+stars = ['*'];
+for i = 1:4
+    patern = patern + string('**');
     stars = [stars; patern];
 end
-for i = 1:4
-    stars(5+i) = stars(5-i);
+for i = 1:5
+    fprintf('%s\n', stars(i));
 end
-for i = 1:9
+for i = 5:-1:1
     fprintf('%s\n', stars(i));
 end
 
@@ -84,6 +84,7 @@ for i = 1:n
     end
 end
 disp(pat_mat)
+
 % Q3
 n = input('Enter an even number: ');
 for i = 2:n
@@ -93,6 +94,7 @@ for i = 2:n
     end
 end
 fprintf('Two such pairs for number %d are %d and %d.\n', n, p_num, n - p_num)
+
 %Q4
 n = input('Enter a positive number: ');
 p_mat = ones(n);
