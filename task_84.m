@@ -50,7 +50,7 @@ for i = 1:m
         sq_mat(i, j) = input('');
     end
 end
-disp(sq_mat)
+disp(sq_mat);
 if sum(sum(sq_mat)) > 0
     count = 1;
 else
@@ -79,5 +79,13 @@ for i = 1:m
         zero_yes = 0;
     end
 end
-disp(count)
+disp(count*count);
 clear
+
+%Q2
+disp('Enter the x and y position of the current position:');
+x = input('x?: ');
+y = input('y?: ');
+disp('Enter the a and b position of the next position: ');
+a = input('a?: ');
+b = input('b?: ');
