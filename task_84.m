@@ -89,3 +89,17 @@ y = input('y?: ');
 disp('Enter the a and b position of the next position: ');
 a = input('a?: ');
 b = input('b?: ');
+
+m = 1;
+n = 1;
+for i = 1:(a - x)
+    m = m*i;
+end
+for i = 1:(b - y)
+    m = m*i;
+end
+for i = 1:((a - x) + (b - y))
+    n = n*i;
+end
+fprintf('The number of ways one can reach from current position to next position are %d\n', n/m);
+clear
