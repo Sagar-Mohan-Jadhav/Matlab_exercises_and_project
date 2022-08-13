@@ -2,7 +2,7 @@
 find the highest N digit pandigital prime number, where N is user input
 %}
 
-n = input("Enter a positive number: ");
+n = input("Enter N: ");
 highest_panprime = [];
 
 for i = (10^(n - 1)):((10^n) - 1)
