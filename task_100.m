@@ -19,5 +19,5 @@ while length(divisors) < 21
     count = count + 1;
 end
 
-fprintf('The smallest summation number with 20 or more than 20 divisors is %d and divisors are as follows.\n', sum)
+fprintf('The smallest summation number with more than 20 divisors is %d and divisors are as follows.\n', sum)
 disp(divisors)
