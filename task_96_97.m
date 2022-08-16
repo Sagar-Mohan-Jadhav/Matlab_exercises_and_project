@@ -1,5 +1,5 @@
 % find a pythagrean triplet such that a + b + c = 1000 and a < b < c
-py_found = false;
+
 for c = 3: 997
     for b = 2: c - 1
         for a = 1: b - 1
