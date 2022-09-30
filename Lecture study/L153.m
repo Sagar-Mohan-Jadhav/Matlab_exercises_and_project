@@ -1,0 +1,9 @@
+data = readtable('E:\Notes\Matlab\Lecture Study\Machine Learning for Data Science using MATLAB\Data Preprocessing\Data_4.csv');
+data.Location = string(data.Location);
+data.Opinion = string(data.Opinion);
+var_us = categorical_to_numeric(data.Location, ["US", "Africa", "Asia"], [1 0 0]);
+var_africa = categorical_to_numeric(data.Location, ["US", "Africa", "Asia"], [0 1 0]);
+var_asia = categorical_to_numeric(data.Location, ["US", "Africa", "Asia"], [0 0 1]);
+var_liked = categorical_to_numeric(data.Opinion, ["Liked", "not liked"], [1 0]);
+data = table(var_us, var_africa, var_asia, data.Age, data.AnnualSalary, var_liked);
+data.Properties.VariableNames = {'US', 'Africa', 'Asia', 'Age', 'AnnualSalary', 'Opinion'}
