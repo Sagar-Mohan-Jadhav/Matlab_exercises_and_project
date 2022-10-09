@@ -7,7 +7,7 @@ and checks if the meaning is correct, if not it gives correct meaning as
 output.
 added function-
 now it repeats the words at the end of the each cycle which user
-incorrectly guesses, till the user corrects it.
+incorrectly guessed, till the user corrects it.
 %}
 
 while true
