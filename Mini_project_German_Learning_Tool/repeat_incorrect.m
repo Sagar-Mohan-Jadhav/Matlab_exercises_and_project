@@ -7,7 +7,7 @@ for index = 1: length(incorrect_list)
     correct_english_meaning = english_meaning(incorrect_list(index));
     correct_english_meaning = capitalize_first_letter(correct_english_meaning{1});
     if string(correct_english_meaning) == string(meaning)
-        disp("Correct")
+        disp("Correct!")
     else
         fprintf("Wrong! The correct meaning is: %s\n", correct_english_meaning)
         list = [list incorrect_list(index)];
