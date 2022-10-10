@@ -9,7 +9,7 @@ added function-
 1. now it repeats the words at the end of the each cycle which user
 incorrectly guessed, till the user corrects it.
 2. now it can ask english word and asks user to type in the german meaning
-of that word.
+of that word. with added function 1 also applicable.
 %}
 
 while true
