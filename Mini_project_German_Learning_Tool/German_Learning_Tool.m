@@ -6,8 +6,10 @@ and their meanings. It gives 5 random words to the user and asks for their meani
 and checks if the meaning is correct, if not it gives correct meaning as
 output.
 added function-
-now it repeats the words at the end of the each cycle which user
+1. now it repeats the words at the end of the each cycle which user
 incorrectly guessed, till the user corrects it.
+2. now it can ask english word and asks user to type in the german meaning
+of that word.
 %}
 
 while true
@@ -23,7 +25,7 @@ while true
         meaning = capitalize_first_letter(meaning);
         actual_meaning = english_meaning(random_integer);
         if string(meaning) == string(capitalize_first_letter(actual_meaning{1}))
-            disp("Correct")
+            disp("Correct!")
         else
             fprintf("Wrong! The correct meaning is: %s\n", english_meaning(random_integer))
             incorrect_guess = [incorrect_guess random_integer];
