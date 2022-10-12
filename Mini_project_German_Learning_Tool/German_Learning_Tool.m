@@ -11,8 +11,8 @@ incorrectly guessed, till the user corrects it.
 2. now it can ask english word and asks user to type in the german meaning
 of that word. with added function 1 also applicable.
 3. adding newer words to a separate section in excel file.
+4. Keeps count of consequitive correct guesses of each word in German_vocab_new excel file.
 In progress-
-4. Keeps count of consequitive correct guesses of each word in German_vocab_new excel file. 
 5. now if user corrects certain word consequetively more than 10 times from
 german_vocab_new excel file then that word is added alphabetically to the German_vocab 
 excel sheet from German_vocab_new after running the function sort_vocab.
@@ -86,10 +86,14 @@ while true
                 if string(meaning) == string(capitalize_first_letter(actual_meaning{1}))
                     disp("Correct!")
                     correct_count(random_integer) = correct_count(random_integer) + 1;
+                    cell_range = strcat('C', string(random_integer), ':C', string(random_integer));
+                    xlswrite('German_vocab_new.xlsx', correct_count(random_integer), cell_range{1});
                 else
                     fprintf("Wrong! The correct meaning is: %s\n", english_meaning(random_integer))
                     incorrect_guess = [incorrect_guess random_integer];
                     correct_count(random_integer) = 0;
+                    cell_range = strcat('C', string(random_integer), ':C', string(random_integer));
+                    xlswrite('German_vocab_new.xlsx', correct_count(random_integer), cell_range{1});
                 end
             end
             while ~isempty(incorrect_guess)
@@ -109,14 +113,16 @@ while true
                 if string(meaning) == string(capitalize_first_letter(actual_meaning{1}))
                     disp("Correct!")
                     correct_count(random_integer) = correct_count(random_integer) + 1;
+                    cell_range = strcat('C', string(random_integer), ':C', string(random_integer));
+                    xlswrite('German_vocab_new.xlsx', correct_count(random_integer), cell_range{1});
                 else
                     fprintf("Wrong! The correct meaning is: %s\n", german_word(random_integer))
                     incorrect_guess = [incorrect_guess random_integer];
                     correct_count(random_integer) = 0;
+                    cell_range = strcat('C', string(random_integer), ':C', string(random_integer));
+                    xlswrite('German_vocab_new.xlsx', correct_count(random_integer), cell_range{1});
                 end
             end
-            range = strcat('C1:C', string(range(correct_count))); 
-            xlswrite('German_vocab_new.xlsx', correct_count, range);
             while ~isempty(incorrect_guess)
                 incorrect_guess = repeat_incorrect(english_meaning, german_word, incorrect_guess);
             end
