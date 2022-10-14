@@ -21,8 +21,7 @@ old_new = input("Chose one of the following:\n1- Practice new words\n2- Practice
 mode = input("Choose function:\n1- Guess English meaning\n2- Guess German meaning\n");
 while true
     if old_new == 2
-        german_vocab = importfile("German_vocab.xlsx");
-        german_vocab = table2cell(german_vocab);
+        german_vocab = readcell("German_vocab.xlsx");
         german_word = string(german_vocab(:, 1));
         english_meaning = string(german_vocab(:, 2));
         incorrect_guess = [];
@@ -70,8 +69,7 @@ while true
             end
         end
     elseif old_new == 1
-        german_vocab = importfilenew("German_vocab_new.xlsx");
-        german_vocab = table2cell(german_vocab);
+        german_vocab = readcell("German_vocab_new.xlsx");
         correct_count = cell2mat(german_vocab(:, 3));
         german_word = string(german_vocab(:, 1));
         english_meaning = string(german_vocab(:, 2));
