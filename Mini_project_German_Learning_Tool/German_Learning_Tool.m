@@ -129,5 +129,17 @@ while true
                 break
             end
         end
+    elseif old_new == 3
+        german_vocab = readcell("German_vocab_new.xlsx");
+        correct_count = cell2mat(german_vocab(:, 3));
+        german_word = string(german_vocab(:, 1));
+        english_meaning = string(german_vocab(:, 2));
+        for word_count = 1: length(correct_count)
+            pro_german_word = german_word(word_count);
+            pro_english_meaning = english_meaning(word_count);
+            if correct_count(word_count) > 10
+                sort_list(pro_german_word{1}, pro_english_meaning{1})
+            end
+        end
     end
 end
