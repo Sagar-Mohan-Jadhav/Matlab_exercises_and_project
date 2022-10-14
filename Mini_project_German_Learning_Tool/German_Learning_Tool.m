@@ -15,6 +15,9 @@ of that word. with added function 1 also applicable.
 5. now if user corrects certain word consequetively more than 10 times from
 german_vocab_new excel file then that word is added alphabetically to the German_vocab 
 excel sheet from German_vocab_new after running the function sort_list.
+In progress-
+6. now it deletes the sorted words in 5th function from
+German_vocab_new.xlsx
 %}
 old_new = input("Chose one of the following:\n1- Practice new words\n2- Practice old words.\n3- Sort words\n");
 if old_new ~= 3
@@ -133,13 +136,16 @@ while true
     elseif old_new == 3
         german_vocab = readcell("German_vocab_new.xlsx");
         correct_count = cell2mat(german_vocab(:, 3));
-        german_word = string(german_vocab(:, 1));
-        english_meaning = string(german_vocab(:, 2));
         for word_count = 1: length(correct_count)
+            german_vocab = readcell("German_vocab_new.xlsx");
+            correct_count = cell2mat(german_vocab(:, 3));
+            german_word = string(german_vocab(:, 1));
+            english_meaning = string(german_vocab(:, 2));
             pro_german_word = german_word(word_count);
             pro_english_meaning = english_meaning(word_count);
             if correct_count(word_count) > 10
                 sort_list(pro_german_word{1}, pro_english_meaning{1})
+                delete_sorted(word_count, correct_count, german_word, english_meaning)
             end
         end
         break
