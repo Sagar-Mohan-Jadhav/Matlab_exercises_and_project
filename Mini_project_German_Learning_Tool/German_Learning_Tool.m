@@ -15,7 +15,6 @@ of that word. with added function 1 also applicable.
 5. now if user corrects certain word consequetively more than 10 times from
 german_vocab_new excel file then that word is added alphabetically to the German_vocab 
 excel sheet from German_vocab_new after running the function sort_list.
-In progress-
 6. now it deletes the sorted words in 5th function from
 German_vocab_new.xlsx
 %}
