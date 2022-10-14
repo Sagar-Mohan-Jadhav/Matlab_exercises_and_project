@@ -1,1 +1,0 @@
-a = readcell("German_vocab.xlsx")
