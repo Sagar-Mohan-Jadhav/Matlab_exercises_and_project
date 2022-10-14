@@ -12,7 +12,6 @@ incorrectly guessed, till the user corrects it.
 of that word. with added function 1 also applicable.
 3. adding newer words to a separate section in excel file.
 4. Keeps count of consequitive correct guesses of each word in German_vocab_new excel file.
-In progress-
 5. now if user corrects certain word consequetively more than 10 times from
 german_vocab_new excel file then that word is added alphabetically to the German_vocab 
 excel sheet from German_vocab_new after running the function sort_list.

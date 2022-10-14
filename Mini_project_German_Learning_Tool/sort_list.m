@@ -46,7 +46,7 @@ for index = count: length(old_data1)
     end
 end
 cell_range = strcat('A', string(index + 1), ':C', string(length(old_data1) + 1));
-writematrix([old_data1(index: length(old_data1)) old_data2(index: length(old_data1)) old_data3(index: length(old_data1))] , 'test.xlsx', 'Range', cell_range);
+writematrix([old_data1(index: length(old_data1)) old_data2(index: length(old_data1)) old_data3(index: length(old_data1))] , 'German_vocab.xlsx', 'Range', cell_range);
 cell_range = strcat('A', string(index), ':A', string(index));
 writematrix(capitalize_first_letter(new_word), 'German_vocab.xlsx', 'Range', cell_range);
 cell_range = strcat('B', string(index), ':B', string(index));
