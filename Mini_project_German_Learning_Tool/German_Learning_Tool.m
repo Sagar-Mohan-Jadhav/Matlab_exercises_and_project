@@ -17,6 +17,8 @@ german_vocab_new excel file then that word is added alphabetically to the German
 excel sheet from German_vocab_new after running the function sort_list.
 6. now it deletes the sorted words in 5th function from
 German_vocab_new.xlsx
+7. now it keeps the track of consequitive correct guesses of meanings of
+words in German_vocab.xlsx as well.
 %}
 old_new = input("Chose one of the following:\n1- Practice new words\n2- Practice old words.\n3- Sort words\n");
 if old_new ~= 3
@@ -27,6 +29,7 @@ while true
         german_vocab = readcell("German_vocab.xlsx");
         german_word = string(german_vocab(:, 1));
         english_meaning = string(german_vocab(:, 2));
+        correct_count_old = cell2mat(german_vocab(:, 4));
         incorrect_guess = [];
         if mode == 1
             for index = 1: 7
@@ -37,9 +40,13 @@ while true
                 actual_meaning = english_meaning(random_integer);
                 if string(meaning) == string(capitalize_first_letter(actual_meaning{1}))
                     disp("Correct!")
+                    cell_range = strcat('D', string(random_integer), ':D', string(random_integer));
+                    xlswrite('German_vocab.xlsx', correct_count_old(random_integer) + 1, cell_range{1})
                 else
                     fprintf("Wrong! The correct meaning is: %s\n", english_meaning(random_integer))
                     incorrect_guess = [incorrect_guess random_integer];
+                    cell_range = strcat('D', string(random_integer), ':D', string(random_integer));
+                    xlswrite('German_vocab.xlsx', 0, cell_range{1})
                 end
             end
             while ~isempty(incorrect_guess)
@@ -58,9 +65,13 @@ while true
                 actual_meaning = german_word(random_integer);
                 if string(meaning) == string(capitalize_first_letter(actual_meaning{1}))
                     disp("Correct!")
+                    cell_range = strcat('D', string(random_integer), ':D', string(random_integer));
+                    xlswrite('German_vocab.xlsx', correct_count_old(random_integer) + 1, cell_range{1})
                 else
                     fprintf("Wrong! The correct meaning is: %s\n", german_word(random_integer))
                     incorrect_guess = [incorrect_guess random_integer];
+                    cell_range = strcat('D', string(random_integer), ':D', string(random_integer));
+                    xlswrite('German_vocab.xlsx', 0, cell_range{1})
                 end
             end
             while ~isempty(incorrect_guess)

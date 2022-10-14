@@ -4,6 +4,7 @@ old_data = readcell('German_vocab.xlsx');
 old_data1 = string(old_data(:, 1));
 old_data2 = string(old_data(:, 2));
 old_data3 = string(old_data(:, 3));
+old_data4 = cell2mat(old_data(:, 4));
 new_word = upper(new_word);
 count = 1;
 while new_word(1) ~= old_data3(count) && count <= length(old_data1)
@@ -51,6 +52,10 @@ cell_range = strcat('A', string(index), ':A', string(index));
 writematrix(capitalize_first_letter(new_word), 'German_vocab.xlsx', 'Range', cell_range);
 cell_range = strcat('B', string(index), ':B', string(index));
 writematrix(capitalize_first_letter(new_meaning), 'German_vocab.xlsx', 'Range', cell_range);
+cell_range = strcat('D', string(index + 1), ':D', string(length(old_data1) + 1));
+writematrix(old_data4(index: length(old_data1)), 'German_vocab.xlsx', 'Range', cell_range);
+cell_range = strcat('D', string(index), ':D', string(index));
+writematrix(0, 'German_vocab.xlsx', 'Range', cell_range);
 if flag == 1
     cell_range = strcat('C', string(index), ':C', string(index));
     writematrix('', 'German_vocab.xlsx', 'Range', cell_range);
