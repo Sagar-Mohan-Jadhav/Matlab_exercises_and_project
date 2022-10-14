@@ -1,6 +1,6 @@
 function sort_list(new_word, new_meaning)
-seq = [' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-old_data = readcell('test.xlsx');
+seq = [' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ä', 'Ö', 'Ü'];
+old_data = readcell('German_vocab.xlsx');
 old_data1 = string(old_data(:, 1));
 old_data2 = string(old_data(:, 2));
 old_data3 = string(old_data(:, 3));
@@ -48,17 +48,16 @@ end
 cell_range = strcat('A', string(index + 1), ':C', string(length(old_data1) + 1));
 writematrix([old_data1(index: length(old_data1)) old_data2(index: length(old_data1)) old_data3(index: length(old_data1))] , 'test.xlsx', 'Range', cell_range);
 cell_range = strcat('A', string(index), ':A', string(index));
-writematrix(capitalize_first_letter(new_word), 'test.xlsx', 'Range', cell_range);
+writematrix(capitalize_first_letter(new_word), 'German_vocab.xlsx', 'Range', cell_range);
 cell_range = strcat('B', string(index), ':B', string(index));
-writematrix(capitalize_first_letter(new_meaning), 'test.xlsx', 'Range', cell_range);
+writematrix(capitalize_first_letter(new_meaning), 'German_vocab.xlsx', 'Range', cell_range);
 if flag == 1
     cell_range = strcat('C', string(index), ':C', string(index));
-    writematrix('', 'test.xlsx', 'Range', cell_range);
+    writematrix('', 'German_vocab.xlsx', 'Range', cell_range);
 else
     cell_range = strcat('C', string(index), ':C', string(index));
-    writematrix(upper(new_word(1)), 'test.xlsx', 'Range', cell_range);
+    writematrix(upper(new_word(1)), 'German_vocab.xlsx', 'Range', cell_range);
     cell_range = strcat('C', string(index + 1), ':C', string(index + 1));
-    writematrix('', 'test.xlsx', 'Range', cell_range);
-
+    writematrix('', 'German_vocab.xlsx', 'Range', cell_range);
 end
 end

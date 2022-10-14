@@ -15,10 +15,12 @@ of that word. with added function 1 also applicable.
 In progress-
 5. now if user corrects certain word consequetively more than 10 times from
 german_vocab_new excel file then that word is added alphabetically to the German_vocab 
-excel sheet from German_vocab_new after running the function sort_vocab.
+excel sheet from German_vocab_new after running the function sort_list.
 %}
-old_new = input("Chose one of the following:\n1- Practice new words\n2- Practice old words.\n");
-mode = input("Choose function:\n1- Guess English meaning\n2- Guess German meaning\n");
+old_new = input("Chose one of the following:\n1- Practice new words\n2- Practice old words.\n3- Sort words\n");
+if old_new ~= 3
+    mode = input("Choose function:\n1- Guess English meaning\n2- Guess German meaning\n");
+end
 while true
     if old_new == 2
         german_vocab = readcell("German_vocab.xlsx");
@@ -141,5 +143,6 @@ while true
                 sort_list(pro_german_word{1}, pro_english_meaning{1})
             end
         end
+        break
     end
 end
