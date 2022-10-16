@@ -46,23 +46,26 @@ for index = count: length(old_data1)
         break
     end
 end
-cell_range = strcat('A', string(index + 1), ':C', string(length(old_data1) + 1));
-writematrix([old_data1(index: length(old_data1)) old_data2(index: length(old_data1)) old_data3(index: length(old_data1))] , 'German_vocab.xlsx', 'Range', cell_range);
-cell_range = strcat('A', string(index), ':A', string(index));
-writematrix(capitalize_first_letter(new_word), 'German_vocab.xlsx', 'Range', cell_range);
-cell_range = strcat('B', string(index), ':B', string(index));
-writematrix(capitalize_first_letter(new_meaning), 'German_vocab.xlsx', 'Range', cell_range);
-cell_range = strcat('D', string(index + 1), ':D', string(length(old_data1) + 1));
-writematrix(old_data4(index: length(old_data1)), 'German_vocab.xlsx', 'Range', cell_range);
-cell_range = strcat('D', string(index), ':D', string(index));
-writematrix(0, 'German_vocab.xlsx', 'Range', cell_range);
-if flag == 1
-    cell_range = strcat('C', string(index), ':C', string(index));
-    writematrix('', 'German_vocab.xlsx', 'Range', cell_range);
-else
-    cell_range = strcat('C', string(index), ':C', string(index));
-    writematrix(upper(new_word(1)), 'German_vocab.xlsx', 'Range', cell_range);
-    cell_range = strcat('C', string(index + 1), ':C', string(index + 1));
-    writematrix('', 'German_vocab.xlsx', 'Range', cell_range);
+old_word = old_data1(index - 1);
+if new_word ~= upper(old_word)
+    cell_range = strcat('A', string(index + 1), ':C', string(length(old_data1) + 1));
+    writematrix([old_data1(index: length(old_data1)) old_data2(index: length(old_data1)) old_data3(index: length(old_data1))] , 'German_vocab.xlsx', 'Range', cell_range);
+    cell_range = strcat('A', string(index), ':A', string(index));
+    writematrix(capitalize_first_letter(new_word), 'German_vocab.xlsx', 'Range', cell_range);
+    cell_range = strcat('B', string(index), ':B', string(index));
+    writematrix(capitalize_first_letter(new_meaning), 'German_vocab.xlsx', 'Range', cell_range);
+    cell_range = strcat('D', string(index + 1), ':D', string(length(old_data1) + 1));
+    writematrix(old_data4(index: length(old_data1)), 'German_vocab.xlsx', 'Range', cell_range);
+    cell_range = strcat('D', string(index), ':D', string(index));
+    writematrix(0, 'German_vocab.xlsx', 'Range', cell_range);
+    if flag == 1
+        cell_range = strcat('C', string(index), ':C', string(index));
+        writematrix('', 'German_vocab.xlsx', 'Range', cell_range);
+    else
+        cell_range = strcat('C', string(index), ':C', string(index));
+        writematrix(upper(new_word(1)), 'German_vocab.xlsx', 'Range', cell_range);
+        cell_range = strcat('C', string(index + 1), ':C', string(index + 1));
+        writematrix('', 'German_vocab.xlsx', 'Range', cell_range);
+    end
 end
 end

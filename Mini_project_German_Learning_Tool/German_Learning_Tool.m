@@ -19,6 +19,7 @@ excel sheet from German_vocab_new after running the function sort_list.
 German_vocab_new.xlsx
 7. now it keeps the track of consequitive correct guesses of meanings of
 words in German_vocab.xlsx as well.
+8. now it does not let words repeat in German_vocab.xlsx
 %}
 old_new = input("Chose one of the following:\n1- Practice new words\n2- Practice old words.\n3- Sort words\n");
 if old_new ~= 3
