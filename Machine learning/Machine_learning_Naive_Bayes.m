@@ -1,3 +1,12 @@
+%naive bayes is a method of prediction that used probabily. The general
+%formula of naive naive bayes is given as,
+% P(A|X) = P(X|A)*P(A)/P(X) and
+% P(B|X) = P(X|B)*P(B)/P(X) 
+%considering, P(A|X) + P(B|X) = 1, X is priori probability(in this particular case
+% it is calculated by using the data of Age and Salary of the new user. it is the count 
+% of number users within certain range of the new user.)
+%if P(A|X) > P(B|X) has a higher probability the new customer has higher
+%chance of being in category A than B, vise versa.
 % firsty, importing the required data.
 data = readtable('Social_Network_Ads.csv');
 
@@ -8,7 +17,7 @@ conv_estimatedsalary = (data.EstimatedSalary - mean(data.EstimatedSalary))/std(d
 data.EstimatedSalary = conv_estimatedsalary;
 
 %classification of data
-classified_data = fitcknn(data, 'Purchased~Age+EstimatedSalary');
+classified_data = fitcnb(data, 'Purchased~Age+EstimatedSalary');
 %now comes division of data into testing and training sets.
 cv = cvpartition(classified_data.NumObservations, 'HoldOut', 0.2);
 %crossval function shows which data points are being used for testing and
@@ -41,7 +50,7 @@ scatter(training_data.Age(Purchased_points), training_data.EstimatedSalary(Purch
 scatter(training_data.Age(~Purchased_points), training_data.EstimatedSalary(~Purchased_points), '^', 'MarkerEdgeColor','black', 'MarkerFaceColor','green')
 xlabel('Age')
 ylabel('Estimated salary')
-title('K Nearest Neighbour')
+title('Naive Bayes')
 legend ('Not Purchase Prediction Region', 'Purchase Prediction Region', 'Purchased Points', 'Not Purchased Points', 'Location','northeast')
 %to remove the white spaces near the axes
 axis tight
