@@ -1,0 +1,36 @@
+import java.awt.Robot;
+import java.awt.event.*;
+robot = java.awt.Robot();
+robot.delay(5000);
+robot.keyPress(KeyEvent.VK_H);
+robot.keyRelease(KeyEvent.VK_H);
+robot.keyPress(KeyEvent.VK_E);
+robot.keyRelease(KeyEvent.VK_E);
+robot.keyPress(KeyEvent.VK_L);
+robot.keyRelease(KeyEvent.VK_L);
+robot.keyPress(KeyEvent.VK_L);
+robot.keyRelease(KeyEvent.VK_L);
+robot.keyPress(KeyEvent.VK_O);
+robot.keyRelease(KeyEvent.VK_O);
+robot.keyPress(KeyEvent.VK_SPACE);
+robot.keyRelease(KeyEvent.VK_SPACE);
+robot.keyPress(KeyEvent.VK_W);
+robot.keyRelease(KeyEvent.VK_W);
+robot.keyPress(KeyEvent.VK_O);
+robot.keyRelease(KeyEvent.VK_O);
+robot.keyPress(KeyEvent.VK_R);
+robot.keyRelease(KeyEvent.VK_R);
+robot.keyPress(KeyEvent.VK_L);
+robot.keyRelease(KeyEvent.VK_L);
+robot.keyPress(KeyEvent.VK_D);
+robot.keyRelease(KeyEvent.VK_D);
+
+robot.delay(3000);
+
+robot.keyPress(KeyEvent.VK_CONTROL);
+robot.keyPress(KeyEvent.VK_A);
+robot.keyRelease(KeyEvent.VK_CONTROL);
+robot.keyRelease(KeyEvent.VK_A);
+robot.delay(2000);
+robot.keyPress(KeyEvent.VK_DELETE);
+robot.keyRelease(KeyEvent.VK_DELETE);
