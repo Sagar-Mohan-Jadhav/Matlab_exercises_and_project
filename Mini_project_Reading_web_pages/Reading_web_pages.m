@@ -11,5 +11,12 @@ combinations = perms(1: length(search_words));
 
 
 for index = 1: length(search_words(1, :))
-    search_term(index) = join(search_words())
+    search_term(index) = join(search_words(combinations(index, :)));
+    search_term(index) = replace(search_term(index), " ", "+");
 end
+
+for index = 1: length(search_term)
+    search_term(index) = strcat("https://www.google.com/search?q=", search_term(index));
+    search_result(index) = string(extractHTMLText(webread(search_term(index)))); 
+end
+search_result(1)
