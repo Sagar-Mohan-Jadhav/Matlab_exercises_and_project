@@ -17,6 +17,7 @@ end
 for index = 1: length(search_term)
     search_term(index) = strcat("https://search.brave.com/search?q=", search_term(index));
     search_result(index) = string(extractHTMLText(webread(search_term(index))));
+    pause(1);
 end
 
 for index = 1: length(search_result)
@@ -27,4 +28,4 @@ for index = 1: length(search_result)
         count_list(index) = appearances;
     end
 end
-count_list
+
