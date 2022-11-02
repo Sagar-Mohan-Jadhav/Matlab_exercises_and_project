@@ -10,7 +10,7 @@ on the web page and the web page with most appearances of searched words
 will open automatically.
 %}
 clear all
-search_term = lower(string(input("Enter the search term that you want to search on web: ", 's')));
+search_term = lower(string(input("\n\n\n\n\n\n\nEnter the search term that you want to search on web: ", 's')));
 search_words = strsplit(search_term);
 combinations = perms(1: length(search_words));
 
