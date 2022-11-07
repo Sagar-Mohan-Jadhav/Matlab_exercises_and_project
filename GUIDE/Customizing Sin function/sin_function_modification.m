@@ -43,7 +43,8 @@ else
 end
 % End initialization code - DO NOT EDIT
 
-
+s1pos = 0;
+s2pos = 0;
 % --- Executes just before sin_function_modification is made visible.
 function sin_function_modification_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
@@ -90,6 +91,8 @@ function slider1_CreateFcn(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
+
+
 % Hint: slider controls usually have a light gray background.
 if isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor',[.9 .9 .9]);
@@ -104,11 +107,15 @@ function slider2_Callback(hObject, eventdata, handles)
 
 % Hints: get(hObject,'Value') returns position of slider
 %        get(hObject,'Min') and get(hObject,'Max') to determine range of slider
+
 s1pos = get(handles.slider1, 'value');
 s2pos = get(handles.slider2, 'value');
 x = 0: 0.01: 70;
-plot(handles.axes1, (x*s2pos).*sin(s1pos*x));
-set(handles.text5, 'string', s2pos*x);
+plot(handles.axes1, (s2pos).*sin(s1pos*x));
+ylim([-1 1]);
+set(handles.text5, 'string', s2pos);
+set(handles.text1, 'string', s1pos);
+
 
 
 % --- Executes during object creation, after setting all properties.
