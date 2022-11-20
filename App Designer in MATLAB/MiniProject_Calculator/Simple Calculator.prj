@@ -1,0 +1,63 @@
+<deployment-project plugin="plugin.apptool" plugin-version="1.0">
+  <configuration build-checksum="3082240946" file="E:\Notes\Matlab\Lecture Study\Matlab exercises and project\Matlab_exercises_and_project\App Designer in MATLAB\MiniProject_Calculator\Simple Calculator.prj" location="E:\Notes\Matlab\Lecture Study\Matlab exercises and project\Matlab_exercises_and_project\App Designer in MATLAB\MiniProject_Calculator" name="Simple Calculator" target="target.mlapps" target-name="Package App">
+    <param.appname>Simple Calculator</param.appname>
+    <param.authnamewatermark>Sagar Mohan Jadhav</param.authnamewatermark>
+    <param.email />
+    <param.company />
+    <param.icon>${PROJECT_ROOT}\Simple Calculator_resources\icon_24.png</param.icon>
+    <param.icons>
+      <file>${PROJECT_ROOT}\Simple Calculator_resources\icon_48.png</file>
+      <file>${PROJECT_ROOT}\Simple Calculator_resources\icon_24.png</file>
+      <file>${PROJECT_ROOT}\Simple Calculator_resources\icon_16.png</file>
+    </param.icons>
+    <param.summary>This is my mini project Simple Calculator</param.summary>
+    <param.description>In this mini project I have made a Simple Calculator</param.description>
+    <param.screenshot>C:\Users\DELL\AppData\Local\Temp\tp53060ea0_6999_45bf_a617_977a72948b38.png</param.screenshot>
+    <param.version>1.0</param.version>
+    <param.products.name />
+    <param.products.id />
+    <param.products.version />
+    <param.platforms />
+    <param.output>${PROJECT_ROOT}</param.output>
+    <param.guid>cb17285b-8ebd-4c56-9099-fd1eacd916eb</param.guid>
+    <unset>
+      <param.email />
+      <param.company />
+      <param.version />
+      <param.products.name />
+      <param.products.id />
+      <param.products.version />
+      <param.platforms />
+      <param.output />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\calculator.mlapp</file>
+    </fileset.main>
+    <fileset.depfun />
+    <fileset.resources />
+    <fileset.package />
+    <build-deliverables>
+      <file location="E:\Notes\Matlab\Lecture Study\Matlab exercises and project\Matlab_exercises_and_project\App Designer in MATLAB" name="MiniProject_Calculator" optional="false">E:\Notes\Matlab\Lecture Study\Matlab exercises and project\Matlab_exercises_and_project\App Designer in MATLAB\MiniProject_Calculator</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2022b</root>
+      <toolboxes />
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.0</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
