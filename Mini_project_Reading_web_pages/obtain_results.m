@@ -78,26 +78,27 @@ robot.keyPress(KeyEvent.VK_H);
 robot.keyRelease(KeyEvent.VK_H);
 robot.keyPress(KeyEvent.VK_ENTER);
 robot.keyRelease(KeyEvent.VK_ENTER);
+robot.delay(8000);
+robot.keyPress(KeyEvent.VK_TAB);
+robot.keyRelease(KeyEvent.VK_TAB);
+robot.delay(2000);
+robot.keyPress(KeyEvent.VK_TAB);
+robot.keyRelease(KeyEvent.VK_TAB);
 robot.delay(2000);
 robot.keyPress(KeyEvent.VK_TAB);
 robot.keyRelease(KeyEvent.VK_TAB);
 robot.delay(2000);
 robot.keyPress(KeyEvent.VK_TAB);
 robot.keyRelease(KeyEvent.VK_TAB);
-robot.delay(1400);
+robot.delay(2000);
 robot.keyPress(KeyEvent.VK_TAB);
 robot.keyRelease(KeyEvent.VK_TAB);
-robot.delay(1400);
-robot.keyPress(KeyEvent.VK_TAB);
-robot.keyRelease(KeyEvent.VK_TAB);
-robot.delay(1400);
-robot.keyPress(KeyEvent.VK_TAB);
-robot.keyRelease(KeyEvent.VK_TAB);
-robot.delay(1400);
+robot.delay(2000);
 robot.keyPress(KeyEvent.VK_ENTER);
 robot.keyRelease(KeyEvent.VK_ENTER);
-robot.delay(1400);
-for index = 1: 16
+robot.delay(2000);
+for index = 1: 19
+    robot.delay(100);
     robot.keyPress(KeyEvent.VK_TAB);
     robot.keyRelease(KeyEvent.VK_TAB);
 end

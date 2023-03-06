@@ -5,6 +5,7 @@ The the program will automatically open brave browser on Chrome in
 Incognito-mode and will search the best result possible.
 The system compatible for proper functioning is:
 OS: Windows 10
+screen: 1920 x 1080
 to determine the best search result we will look for words searched by user
 on the web page and the web page with most appearances of searched words
 will open automatically.
